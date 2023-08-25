@@ -3,7 +3,17 @@
 @tailwind utilities;
 
 body {
-  @apply text-app-black;
+  @apply text-app-black __line_bg;
+}
+
+.__line_bg {
+  background-image: repeating-linear-gradient(
+    to top left,
+    #f1e4b83e 0%,
+    #f1e4b83e 0.01%,
+    transparent 0.1%,
+    transparent 8.1%
+  );
 }
 
 @layer components {

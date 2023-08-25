@@ -32,7 +32,7 @@ function Card({
   icon: ReactNode;
 }) {
   return (
-    <div className="py-4 pr-5 pl-9 rounded shadow w-[32%]">
+    <div className="py-4 bg-white pr-5 pl-9 rounded shadow w-[32%]">
       <div className="flex items-center gap-x-3">
         <h5 className="text-2xl font-extrabold">{title}</h5>
         {icon}

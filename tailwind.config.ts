@@ -11,7 +11,7 @@ const config: Config = {
       },
       colors: {
         accent: "#F1E4B8",
-        secondary: "#26004D",
+        secondary: "#4F47C8",
         app: {
           black: "#313131",
         },
