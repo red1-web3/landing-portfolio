@@ -27,7 +27,7 @@ const ExperianceSection = () => {
                 </div>
                 <div
                   className={clsx(
-                    "__c_all h-full bg-secondary/5 shadow-xl pl-8",
+                    "__c_all h-full bg-accent/30 shadow-xl pl-8",
                     i % 2
                       ? "rounded-tl-[90px] rounded-bl-2xl"
                       : "rounded-tr-[90px] rounded-br-2xl"
@@ -50,7 +50,7 @@ const ExperianceSection = () => {
               </div>
             ))}
           </div>
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-full bg-app-black"></div>
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-full bg-accent"></div>
         </div>
       </div>
     </section>
