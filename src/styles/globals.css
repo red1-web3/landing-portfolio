@@ -19,6 +19,7 @@ body {
 @layer components {
   .__c_all {
     @apply flex items-center justify-center;
+    /* color: #f5dd8f */
   }
   .__container {
     @apply max-w-[calc(1300px+40px)] px-5 mx-auto;

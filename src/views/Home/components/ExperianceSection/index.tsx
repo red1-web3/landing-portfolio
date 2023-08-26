@@ -21,16 +21,16 @@ const ExperianceSection = () => {
                   <h3 className="text-3xl -tracking-[.18px] font-extrabold text-secondary">
                     {rule}
                   </h3>
-                  <p className="mt-1.5 text-lg -tracking-[.18px]">
+                  <div className="mt-1.5 text-lg -tracking-[.18px]">
                     {companyNameAndTime}
-                  </p>
+                  </div>
                 </div>
                 <div
                   className={clsx(
-                    "__c_all h-full bg-accent/30 shadow-xl pl-8",
+                    "__c_all h-full shadow-xl pl-8",
                     i % 2
-                      ? "rounded-tl-[90px] rounded-bl-2xl"
-                      : "rounded-tr-[90px] rounded-br-2xl"
+                      ? "rounded-tl-[90px] rounded-bl-2xl bg-gradient-to-br from-accent/80 to-accent/30"
+                      : "rounded-tr-[90px] bg-gradient-to-bl rounded-br-2xl from-accent/80 to-accent/30"
                   )}
                 >
                   <ul
@@ -42,7 +42,7 @@ const ExperianceSection = () => {
                         <div className="shrink-0 translate-y-1">
                           <AiOutlineCaretRight />
                         </div>
-                        <p className="text-lg">{list}</p>
+                        <div className="text-lg">{list}</div>
                       </li>
                     ))}
                   </ul>
