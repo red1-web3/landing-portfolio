@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const EducationSection = () => {
   return (
-    <section>
+    <section id="education">
       <div className="__container">
         <SectionTitle title="Education" />
         <div className="mt-8 lg:mt-16">

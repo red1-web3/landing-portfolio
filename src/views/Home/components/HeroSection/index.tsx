@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <section className="pt-[60px] lg:pt-[100px]">
+    <section id="home" className="pt-[60px] lg:pt-[100px]">
       <div className="__container">
         <div className="grid md:grid-cols-[3fr,2fr] md:gap-x-5 items-center gap-y-6">
           <div className="max-md:order-2">

@@ -6,28 +6,32 @@ import { useClickAway } from "react-use";
 
 const navItems = [
   {
+    label: "Home",
+    url: "#home",
+  },
+  {
     label: "Skills",
-    url: "#",
+    url: "#skills",
   },
   {
     label: "Experiance",
-    url: "#",
+    url: "#experiance",
   },
   {
     label: "Community",
-    url: "#",
+    url: "#community",
   },
   {
-    label: "About",
-    url: "#",
+    label: "Education",
+    url: "#education",
   },
   {
     label: "FAQ",
-    url: "#",
+    url: "#faq",
   },
   {
     label: "Get In Touch",
-    url: "#",
+    url: "#get-in-touch",
   },
 ];
 
@@ -61,20 +65,21 @@ const Header = () => {
             </button>
 
             <div
-              className="fixed top-0 right-0 bg-accent shadow-md z-[98] p-6 pr-[100px] pt-[100px] duration-[400ms]"
+              className="fixed top-0 right-0 w-full h-full bg-accent shadow-md z-[98] p-6 duration-[400ms] __c_all text-center ease-in-out"
               style={{
                 clipPath: showNav
-                  ? "circle(94.0% at 68% 35%)"
-                  : "circle(0.0% at 100% 0)",
+                  ? "polygon(0 0, 100% 0%, 100% 100%, 0% 100%)"
+                  : "polygon(100% 0, 100% 0%, 100% 100%, 100% 100%)",
               }}
             >
               <div>
-                <div className="flex flex-col gap-y-5">
+                <div className="flex flex-col gap-y-7">
                   {navItems.map(({ label, url }, i) => (
                     <Link
                       href={url}
                       key={i}
-                      className="text-lg font-medium text-white"
+                      className="text-xl font-medium text-white"
+                      onClick={() => setShowNav(false)}
                     >
                       {label}
                     </Link>

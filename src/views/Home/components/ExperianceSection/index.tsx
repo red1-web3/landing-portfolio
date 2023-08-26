@@ -5,7 +5,7 @@ import { AiOutlineCaretRight } from "react-icons/ai";
 
 const ExperianceSection = () => {
   return (
-    <section>
+    <section id="experiance">
       <div className="__container">
         <SectionTitle title="Experiance" />
 

@@ -5,6 +5,11 @@
 body {
   @apply text-app-black __line_bg;
 }
+html,
+* {
+  scroll-behavior: smooth;
+  scroll-margin-top: 100px;
+}
 
 .__line_bg {
   background-image: repeating-linear-gradient(

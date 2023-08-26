@@ -6,7 +6,7 @@ import { CgChevronDown } from "react-icons/cg";
 
 const FaqSection = () => {
   return (
-    <section>
+    <section id="faq">
       <div className="__container">
         <SectionTitle title="Faq" />
         <div className="mt-8 lg:mt-16"> </div>{" "}

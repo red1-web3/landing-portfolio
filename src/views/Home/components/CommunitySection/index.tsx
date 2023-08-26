@@ -4,7 +4,7 @@ import { BiLinkExternal } from "react-icons/bi";
 
 const CommunitySection = () => {
   return (
-    <section>
+    <section id="community">
       <div className="__container">
         <SectionTitle title="Community" />
 
