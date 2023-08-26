@@ -27,7 +27,13 @@ const HeroSection = () => {
           </div>
 
           <div className="max-md:order-1 max-lg:max-w-[340px]">
-            <Image src={"/img.png"} alt="Image" height={559} width={547} />
+            <Image
+              src={"/img.png"}
+              alt="Image"
+              height={559}
+              width={547}
+              priority
+            />
           </div>
         </div>
       </div>
