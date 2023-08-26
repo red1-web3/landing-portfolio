@@ -2,18 +2,18 @@ import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <section className="pt-[170px] pb-[114px]">
+    <section className="pb-14 pt-[100px] lg:pt-[170px] lg:pb-[114px]">
       <div className="__container">
-        <div className="grid grid-cols-[3fr,2fr] items-center">
-          <div>
-            <h4 className="text-[32px]/[33px] ml-1.5 tracking-[0.18px] font-extrabold">
+        <div className="grid md:grid-cols-[3fr,2fr] md:gap-x-5 items-center gap-y-6">
+          <div className="max-md:order-2">
+            <h4 className="text-xl lg:text-[32px]/[33px] ml-1.5 tracking-[0.18px] font-extrabold">
               Hi, I’m a
             </h4>
-            <h1 className="text-[80px]/[103%] __gradient1 mt-2 tracking-[0.18px] font-extrabold">
+            <h1 className="text-4xl lg:text-[80px]/[103%] __gradient1 lg:mt-2 tracking-[0.18px] font-extrabold">
               Senior Backend Engineer
             </h1>
 
-            <p className="my-[30px] max-w-[595px] text-xl">
+            <p className="my-4 lg:my-[30px] max-w-[595px] md:text-lg lg:text-xl">
               I’m <strong>Pankaj Singh Solanki</strong>, and a Software
               Developer with a specialization in <strong>Backend</strong> &{" "}
               <strong>DevOps</strong>,{" "}
@@ -26,7 +26,7 @@ const HeroSection = () => {
             </button>
           </div>
 
-          <div>
+          <div className="max-md:order-1 max-lg:max-w-[340px]">
             <Image src={"/img.png"} alt="Image" height={559} width={547} />
           </div>
         </div>

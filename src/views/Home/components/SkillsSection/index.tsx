@@ -4,10 +4,10 @@ import { ReactNode } from "react";
 
 const SkillsSection = () => {
   return (
-    <section className="py-[117px]">
+    <section className="lg:py-[117px]">
       <div className="__container">
         <SectionTitle title="Skills" subTitle="technologies I know" />
-        <div className="mt-16">
+        <div className="mt-8 lg:mt-16">
           <div className="flex flex-wrap justify-center">
             {skills.map((skill, i) => (
               <Card key={i} {...skill} index={i} />
@@ -33,8 +33,8 @@ function Card({
   index: number;
 }) {
   return (
-    <div className="group duration-[400ms] hover:shadow-xl py-6 pr-6 bg-white pl-10 border border-black/5 w-[33%] relative isolate">
-      <div className="space-y-5">
+    <div className="group duration-[400ms] hover:shadow-xl p-6 lg:py-6 lg:pr-6 bg-white lg:pl-10 border border-black/5 md:w-1/2 lg:w-[33%] relative isolate">
+      <div className="space-y-3 md:space-y-5">
         <div
           className="text-3xl h-12 aspect-square __c_all rounded-full text-white group-hover:shadow-md duration-[400ms] group-hover:-translate-y-1.5"
           style={{
@@ -46,15 +46,15 @@ function Card({
           {icon}
         </div>
         <h5
-          className="text-2xl font-extrabold duration-[400ms] delay-[50ms] group-hover:-translate-y-1.5"
+          className="text-xl md:text-2xl font-extrabold duration-[400ms] delay-[50ms] group-hover:-translate-y-1.5"
           style={{ color: `hsl(${index * 100}, 50%, 50%)` }}
         >
           {title}
         </h5>
       </div>
 
-      <div className="relative mt-3">
-        <p className="-tracking-[0.18 px] text-lg leading-[113.6%] delay-100 duration-[400ms] group-hover:-translate-y-1.5">
+      <div className="relative mt-2 md:mt-3">
+        <p className="-tracking-[0.18 px] md:text-lg leading-[113.6%] delay-100 duration-[400ms] group-hover:-translate-y-1.5">
           {description}
         </p>
       </div>
