@@ -8,20 +8,28 @@ const CommunitySection = () => {
       <div className="__container">
         <SectionTitle title="Community" subTitle="Journey of my career" />
 
-        <div className="mt-20">
+        <div className="mt-16">
           <div className="grid lg:grid-cols-2 gap-5">
             {community.map(({ title, url }, i) => (
               <div
                 key={i}
-                className="min-h-[300px] bg-gradient-to-br from-[#262085] to-secondary rounded-xl p-7"
+                className="min-h-[300px] p-9 relative isolate group shadow-md hover:shadow-xl duration-[400ms] bg-white rounded-lg overflow-hidden"
               >
-                <div className="flex items-center justify-between">
-                  <h3 className="text-3xl font-black text-white">{title}</h3>
+                <div className="flex items-start justify-between">
+                  <h3 className="text-3xl font-black">{title}</h3>
 
-                  <button className="text-xl text-white">
+                  <a
+                    className="text-xl inline-block translate-y-2.5"
+                    href={url}
+                  >
                     <BiLinkExternal />
-                  </button>
+                  </a>
                 </div>
+
+                <div
+                  className="absolute inset-0 z-[-1] opacity-0 group-hover:opacity-10 duration-[400ms]"
+                  style={{ backgroundColor: `hsl(${i * 200}, 100%, 60%)` }}
+                ></div>
               </div>
             ))}
           </div>

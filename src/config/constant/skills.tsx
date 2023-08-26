@@ -1,4 +1,4 @@
-import { BiLogoCPlusPlus } from "react-icons/bi";
+import { BiLogoCPlusPlus, BiMoneyWithdraw } from "react-icons/bi";
 import {
   BsDatabaseFillCheck,
   BsFillCloudLightningRainFill,
@@ -8,10 +8,9 @@ import { CgWebsite } from "react-icons/cg";
 import { FaPython } from "react-icons/fa";
 import { FaGolang } from "react-icons/fa6";
 import { GiSkills } from "react-icons/gi";
-import { GrTechnology } from "react-icons/gr";
 import { MdOutlineWebhook } from "react-icons/md";
 import { RiRemoteControlLine } from "react-icons/ri";
-import { TbSettingsAutomation } from "react-icons/tb";
+import { TbInfoSquareFilled, TbSettingsAutomation } from "react-icons/tb";
 import { VscAzureDevops } from "react-icons/vsc";
 
 export const skills = [
@@ -52,7 +51,7 @@ export const skills = [
   },
   {
     title: "InfoSec",
-    icon: <BsFillInfoSquareFill />,
+    icon: <TbInfoSquareFilled />,
     description:
       "Cryptography, SSH, GPG, SFTP, Message Digests, Blockchain, Fernets",
   },
@@ -70,7 +69,7 @@ export const skills = [
   },
   {
     title: "Financial (FinTech)",
-    icon: <GrTechnology />,
+    icon: <BiMoneyWithdraw />,
     description:
       "Collection & Processing of data, Analysis, Trade automations, Algo trading systems, ",
   },

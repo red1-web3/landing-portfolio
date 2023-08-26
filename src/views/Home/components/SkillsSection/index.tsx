@@ -7,7 +7,7 @@ const SkillsSection = () => {
     <section className="py-[117px]">
       <div className="__container">
         <SectionTitle title="Skills" subTitle="technologies I know" />
-        <div className="mt-11">
+        <div className="mt-16">
           <div className="flex flex-wrap justify-center">
             {skills.map((skill, i) => (
               <Card key={i} {...skill} index={i} />
@@ -46,7 +46,7 @@ function Card({
           {icon}
         </div>
         <h5
-          className="text-2xl font-extrabold duration-[400ms] group-hover:-translate-y-1.5"
+          className="text-2xl font-extrabold duration-[400ms] delay-[50ms] group-hover:-translate-y-1.5"
           style={{ color: `hsl(${index * 100}, 50%, 50%)` }}
         >
           {title}
@@ -54,7 +54,7 @@ function Card({
       </div>
 
       <div className="relative mt-3">
-        <p className="-tracking-[0.18 px] text-lg leading-[113.6%] duration-[400ms] group-hover:-translate-y-1.5">
+        <p className="-tracking-[0.18 px] text-lg leading-[113.6%] delay-100 duration-[400ms] group-hover:-translate-y-1.5">
           {description}
         </p>
       </div>

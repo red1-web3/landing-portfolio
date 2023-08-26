@@ -25,3 +25,16 @@ body {
     @apply max-w-[calc(1300px+40px)] px-5 mx-auto;
   }
 }
+
+.__gradient1 {
+  background: #4f47c8;
+  background: linear-gradient(to right, #4f47c8 0%, #c80000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.__gradient2 {
+  background: #000000;
+  background: linear-gradient(to right, #000000 0%, #c80606 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
