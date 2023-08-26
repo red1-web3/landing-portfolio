@@ -4,19 +4,21 @@ import { BiLinkExternal } from "react-icons/bi";
 
 const CommunitySection = () => {
   return (
-    <section className="pb-[116px]">
+    <section>
       <div className="__container">
-        <SectionTitle title="Community" subTitle="Journey of my career" />
+        <SectionTitle title="Community" />
 
         <div className="mt-16">
           <div className="grid lg:grid-cols-2 gap-5">
             {community.map(({ title, url }, i) => (
               <div
                 key={i}
-                className="min-h-[300px] p-9 relative isolate group shadow-md hover:shadow-xl duration-[400ms] bg-white rounded-lg overflow-hidden"
+                className="min-h-[300px] p-9 relative isolate group shadow-lg hover:shadow-2xl duration-[400ms] bg-white rounded-lg overflow-hidden"
               >
                 <div className="flex items-start justify-between">
-                  <h3 className="text-3xl font-black">{title}</h3>
+                  <h3 className="text-xl md:text-2xl lg:text-3xl font-black">
+                    {title}
+                  </h3>
 
                   <a
                     className="text-xl inline-block translate-y-2.5"

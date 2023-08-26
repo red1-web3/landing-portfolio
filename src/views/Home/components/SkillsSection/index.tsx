@@ -4,9 +4,9 @@ import { ReactNode } from "react";
 
 const SkillsSection = () => {
   return (
-    <section className="lg:py-[117px]">
+    <section>
       <div className="__container">
-        <SectionTitle title="Skills" subTitle="technologies I know" />
+        <SectionTitle title="Skills" />
         <div className="mt-8 lg:mt-16">
           <div className="flex flex-wrap justify-center">
             {skills.map((skill, i) => (

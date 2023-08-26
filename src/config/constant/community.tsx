@@ -5,6 +5,6 @@ export const community = [
   },
   {
     title: "Automated Algorithmic Trading System",
-    url: "",
+    url: "#",
   },
 ];
