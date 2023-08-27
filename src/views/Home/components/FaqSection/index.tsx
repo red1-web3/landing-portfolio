@@ -4,12 +4,11 @@ import clsx from "clsx";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { CgChevronDown } from "react-icons/cg";
-// import Collapsible from "react-collapsible";
 
 const Collapsible = dynamic(() => import("react-collapsible"), { ssr: false });
 
 const FaqSection = () => {
-  const [activeFaq, setActiveFaq] = useState<number | null>(0);
+  const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
   const handleClick = (i: number) => {
     setActiveFaq((prev) => (prev === i ? null : i));
@@ -23,7 +22,6 @@ const FaqSection = () => {
           {faqs.map((data, i) => (
             <CollapsibleColumn
               {...data}
-              index={i}
               key={i}
               onClick={() => handleClick(i)}
               isOpen={i === activeFaq}
@@ -40,13 +38,11 @@ export default FaqSection;
 function CollapsibleColumn({
   description,
   title,
-  index,
   onClick,
   isOpen,
 }: {
   title: string;
   description: string;
-  index: number;
   onClick: () => void;
   isOpen: boolean;
 }) {
