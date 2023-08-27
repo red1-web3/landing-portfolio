@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { gsap } from "gsap";
+import { Expo, gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
 import { Slant as Hamburger } from "hamburger-react";
 import Image from "next/image";
@@ -49,8 +49,6 @@ const Header = () => {
     setShowNav(false);
   });
 
-  console.log(router.asPath);
-
   return (
     <header className="fixed top-0 left-0 w-full bg-white shadow z-[99]">
       <div className="__container py-2 lg:py-6">
@@ -83,14 +81,23 @@ const Header = () => {
               <div>
                 <div className="flex flex-col gap-y-7">
                   {navItems.map(({ label, url }, i) => (
-                    <a
-                      href={url}
+                    <button
                       key={i}
                       className="text-xl font-medium text-white"
-                      onClick={() => setShowNav(false)}
+                      onClick={() => {
+                        setShowNav(false);
+                        gsap.to(window, {
+                          scrollTo: {
+                            y: url,
+                            offsetY: 90,
+                          },
+                          duration: 0.5,
+                          ease: Expo.easeInOut,
+                        });
+                      }}
                     >
                       {label}
-                    </a>
+                    </button>
                   ))}
                 </div>
               </div>
@@ -105,9 +112,12 @@ const Header = () => {
                   <button
                     onClick={() => {
                       gsap.to(window, {
-                        scrollTo: url,
-                        duration: 0.2,
-                        ease: "back.in",
+                        scrollTo: {
+                          y: url,
+                          offsetY: 120,
+                        },
+                        duration: 0.5,
+                        ease: Expo.easeInOut,
                       });
                     }}
                     className={clsx(

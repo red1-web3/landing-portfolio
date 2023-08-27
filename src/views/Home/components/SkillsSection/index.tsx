@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 
 const SkillsSection = () => {
   return (
-    <section id="skills">
+    <section id="skills" className="scroll-mt-16">
       <div className="__container">
         <SectionTitle title="Skills" />
         <div className="mt-8 lg:mt-16">
