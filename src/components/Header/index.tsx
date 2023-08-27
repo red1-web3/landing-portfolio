@@ -1,6 +1,8 @@
+import clsx from "clsx";
 import { Slant as Hamburger } from "hamburger-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useRef, useState } from "react";
 import { useClickAway } from "react-use";
 
@@ -38,10 +40,14 @@ const navItems = [
 const Header = () => {
   const mobileNav = useRef(null);
   const [showNav, setShowNav] = useState(false);
+  const router = useRouter();
 
   useClickAway(mobileNav, () => {
     setShowNav(false);
   });
+
+  // console.log(navItems[1].url.split("").unshift());
+  console.log(router.asPath);
 
   return (
     <header className="fixed top-0 left-0 w-full bg-white shadow z-[99]">
@@ -91,12 +97,15 @@ const Header = () => {
 
           {/* Desktop Nav */}
           <nav className="max-lg:hidden">
-            <ul className="flex items-center gap-x-[30px]">
+            <ul className="flex items-center gap-x-2.5">
               {navItems.map(({ label, url }, i) => (
                 <li key={i}>
                   <Link
                     href={url}
-                    className="relative py-1.5 px-5 hover:text-white duration-300 before:duration-300 rounded before:absolute before:bottom-0 before:left-0 before:h-0 before:w-full before:bg-accent hover:before:h-full before:z-[-1] before:ease-in-out"
+                    className={clsx(
+                      "relative font-semibold py-1.5 px-5 duration-300 rounded hover:text-accent",
+                      router.asPath === `/${url}` && "text-accent"
+                    )}
                   >
                     {label}
                   </Link>

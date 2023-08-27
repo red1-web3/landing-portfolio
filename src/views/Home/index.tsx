@@ -2,6 +2,7 @@ import CommunitySection from "@/views/Home/components/CommunitySection";
 import EducationSection from "@/views/Home/components/EducationSection";
 import ExperianceSection from "@/views/Home/components/ExperianceSection";
 import FaqSection from "@/views/Home/components/FaqSection";
+import GetInTouchSection from "@/views/Home/components/GetInTouchSection";
 import HeroSection from "@/views/Home/components/HeroSection";
 import SkillsSection from "@/views/Home/components/SkillsSection";
 
@@ -14,6 +15,7 @@ const Home = () => {
       <CommunitySection />
       <EducationSection />
       <FaqSection />
+      <GetInTouchSection />
     </div>
   );
 };

@@ -1,16 +1,36 @@
 import SectionTitle from "@/components/SectionTitle";
+import { faqs } from "@/config/constant/faqs";
 import clsx from "clsx";
+import dynamic from "next/dynamic";
 import { useState } from "react";
-import Collapsible from "react-collapsible";
 import { CgChevronDown } from "react-icons/cg";
+// import Collapsible from "react-collapsible";
+
+const Collapsible = dynamic(() => import("react-collapsible"), { ssr: false });
 
 const FaqSection = () => {
+  const [activeFaq, setActiveFaq] = useState<number | null>(0);
+
+  const handleClick = (i: number) => {
+    setActiveFaq((prev) => (prev === i ? null : i));
+  };
+
   return (
     <section id="faq">
       <div className="__container">
         <SectionTitle title="Faq" />
-        <div className="mt-8 lg:mt-16"> </div>{" "}
-      </div>{" "}
+        <div className="mt-8 lg:mt-16">
+          {faqs.map((data, i) => (
+            <CollapsibleColumn
+              {...data}
+              index={i}
+              key={i}
+              onClick={() => handleClick(i)}
+              isOpen={i === activeFaq}
+            />
+          ))}
+        </div>
+      </div>
     </section>
   );
 };
@@ -20,27 +40,35 @@ export default FaqSection;
 function CollapsibleColumn({
   description,
   title,
+  index,
+  onClick,
+  isOpen,
 }: {
   title: string;
   description: string;
+  index: number;
+  onClick: () => void;
+  isOpen: boolean;
 }) {
-  const [isOpen, setIsOpen] = useState(false);
   return (
     <div
       className={clsx(
-        "border border-[#C3C3C3] rounded-lg duration-200",
-        isOpen && "border-dark"
+        "group border border-black/5 bg-white hover:shadow-lg rounded duration-[400ms] relative isolate",
+        isOpen && "shadow-lg"
       )}
     >
       <div
-        onClick={() => setIsOpen((prev) => !prev)}
-        className="flex items-center justify-between cursor-pointer py-7 px-8"
+        onClick={onClick}
+        className="flex items-center justify-between cursor-pointer p-4 md:p-5 lg:py-7 lg:px-8"
       >
-        <h3 className="text-[19px]/[22.5px] font-medium font-space-grotesk">
+        <h3 className="text-base md:text-lg lg:text-xl font-medium font-space-grotesk">
           {title}
         </h3>
         <span
-          className={clsx("inline-block duration-200", isOpen && "-rotate-180")}
+          className={clsx(
+            "inline-block duration-200 text-xl",
+            isOpen && "-rotate-180"
+          )}
         >
           <CgChevronDown />
         </span>
@@ -48,6 +76,14 @@ function CollapsibleColumn({
       <Collapsible trigger="" open={isOpen} transitionTime={200}>
         <p className="pb-7 px-8">{description}</p>
       </Collapsible>
+
+      {/* <div
+        className={clsx(
+          "absolute inset-0 z-[-1] opacity-0 group-hover:opacity-10 duration-[400ms]",
+          isOpen && "opacity-10"
+        )}
+        style={{ backgroundColor: `hsl(${index * 100}, 100%, 60%)` }}
+      ></div> */}
     </div>
   );
 }

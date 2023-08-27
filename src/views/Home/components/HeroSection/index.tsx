@@ -14,15 +14,18 @@ const HeroSection = () => {
             </h1>
 
             <p className="my-4 lg:my-[30px] max-w-[595px] md:text-lg lg:text-xl">
-              I’m a <strong>Software Developer</strong> with a specialization in{" "}
-              <strong>Backend</strong> & <strong>DevOps</strong>,{" "}
-              <strong>Infrastructure Management</strong> ,{" "}
+              I’m a <strong>Software Developer</strong> with a specialization in
+              <strong>Backend</strong> & <strong>DevOps</strong>,
+              <strong>Infrastructure Management</strong> ,
               <strong>Solution Architecture </strong>
               and <strong>Structural Analysis</strong>.
             </p>
-            <button className="border-2 border-transparent hover:border-accent hover:bg-transparent hover:text-accent duration-300 px-4 h-[46px] rounded bg-accent text-white font-medium __c_all">
+            <a
+              href="#get-in-touch"
+              className="w-fit border-2 border-transparent hover:border-accent hover:bg-transparent hover:text-accent duration-300 px-4 h-[46px] rounded bg-accent text-white font-medium __c_all"
+            >
               Get In Touch
-            </button>
+            </a>
           </div>
 
           <div className="max-md:order-1 max-lg:max-w-[340px]">
