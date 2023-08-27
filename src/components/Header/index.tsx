@@ -1,4 +1,6 @@
 import clsx from "clsx";
+import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
 import { Slant as Hamburger } from "hamburger-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -37,6 +39,7 @@ const navItems = [
   },
 ];
 
+gsap.registerPlugin(ScrollToPlugin);
 const Header = () => {
   const mobileNav = useRef(null);
   const [showNav, setShowNav] = useState(false);
@@ -46,7 +49,6 @@ const Header = () => {
     setShowNav(false);
   });
 
-  // console.log(navItems[1].url.split("").unshift());
   console.log(router.asPath);
 
   return (
@@ -81,14 +83,14 @@ const Header = () => {
               <div>
                 <div className="flex flex-col gap-y-7">
                   {navItems.map(({ label, url }, i) => (
-                    <Link
+                    <a
                       href={url}
                       key={i}
                       className="text-xl font-medium text-white"
                       onClick={() => setShowNav(false)}
                     >
                       {label}
-                    </Link>
+                    </a>
                   ))}
                 </div>
               </div>
@@ -100,15 +102,21 @@ const Header = () => {
             <ul className="flex items-center gap-x-2.5">
               {navItems.map(({ label, url }, i) => (
                 <li key={i}>
-                  <Link
-                    href={url}
+                  <button
+                    onClick={() => {
+                      gsap.to(window, {
+                        scrollTo: url,
+                        duration: 0.2,
+                        ease: "back.in",
+                      });
+                    }}
                     className={clsx(
                       "relative font-semibold py-1.5 px-5 duration-300 rounded hover:text-accent",
                       router.asPath === `/${url}` && "text-accent"
                     )}
                   >
                     {label}
-                  </Link>
+                  </button>
                 </li>
               ))}
             </ul>
