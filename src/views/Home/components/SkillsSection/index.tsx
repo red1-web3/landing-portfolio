@@ -1,6 +1,8 @@
 import SectionTitle from "@/components/SectionTitle";
 import { skills } from "@/config/constant/skills";
-import { ReactNode } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { ReactNode, useEffect, useRef } from "react";
 
 const SkillsSection = () => {
   return (
@@ -32,8 +34,28 @@ function Card({
   icon: ReactNode;
   index: number;
 }) {
+  const card = useRef(null);
+  gsap.registerPlugin(ScrollTrigger);
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.to(card.current, {
+        autoAlpha: 1,
+        scrollTrigger: {
+          trigger: card.current,
+          start: "bottom bottom",
+        },
+      });
+    });
+    return () => {
+      ctx.revert();
+    };
+  }, []);
+
   return (
-    <div className="group duration-[400ms] hover:shadow-xl p-6 lg:py-6 lg:pr-6 bg-white lg:pl-10 border border-black/5 md:w-1/2 lg:w-[33%] relative isolate">
+    <div
+      ref={card}
+      className="group opacity-0 duration-[400ms] hover:shadow-xl p-6 lg:py-6 lg:pr-6 bg-white lg:pl-10 border border-black/5 md:w-1/2 lg:w-[33%] relative isolate"
+    >
       <div className="space-y-3 md:space-y-5">
         <div
           className="text-3xl h-12 aspect-square __c_all rounded-full text-white group-hover:shadow-md duration-[400ms] group-hover:-translate-y-1.5"

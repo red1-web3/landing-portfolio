@@ -5,7 +5,7 @@ import { Slant as Hamburger } from "hamburger-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useClickAway } from "react-use";
 
 const navItems = [
@@ -42,15 +42,29 @@ const navItems = [
 gsap.registerPlugin(ScrollToPlugin);
 const Header = () => {
   const mobileNav = useRef(null);
+  const header = useRef(null);
   const [showNav, setShowNav] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.to(header.current, { autoAlpha: 1 });
+    });
+
+    return () => {
+      ctx.revert();
+    };
+  }, []);
 
   useClickAway(mobileNav, () => {
     setShowNav(false);
   });
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white shadow z-[99]">
+    <header
+      ref={header}
+      className="fixed top-0 left-0 w-full bg-white shadow z-[99] opacity-0"
+    >
       <div className="__container py-2 lg:py-6">
         <div className="flex items-center justify-between">
           <Link href={"/"} className="max-lg:max-w-[130px]">

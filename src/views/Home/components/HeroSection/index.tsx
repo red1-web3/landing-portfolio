@@ -1,11 +1,33 @@
+import { gsap } from "gsap";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 
 const HeroSection = () => {
+  const leftTarget = useRef(null);
+  const rightTarget = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.to([leftTarget.current, rightTarget.current], {
+        autoAlpha: 1,
+        y: 0,
+        stagger: 0.1,
+      });
+    });
+
+    return () => {
+      ctx.revert();
+    };
+  }, []);
+
   return (
     <section id="home" className="pt-[60px] lg:pt-[100px]">
       <div className="__container">
         <div className="grid md:grid-cols-[3fr,2fr] md:gap-x-5 items-center gap-y-6">
-          <div className="max-md:order-2">
+          <div
+            ref={leftTarget}
+            className="max-md:order-2 translate-y-3 opacity-0"
+          >
             <h4 className="text-xl lg:text-[32px]/[33px] ml-1.5 tracking-[0.18px] font-extrabold">
               Hi, I’m
             </h4>
@@ -28,7 +50,10 @@ const HeroSection = () => {
             </a>
           </div>
 
-          <div className="max-md:order-1 max-lg:max-w-[340px]">
+          <div
+            ref={rightTarget}
+            className="max-md:order-1 max-lg:max-w-[340px] translate-y-3 opacity-0"
+          >
             <Image
               src={"/img.png"}
               alt="Image"
