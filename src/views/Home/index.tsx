@@ -1,4 +1,3 @@
-import CommunitySection from "@/views/Home/components/CommunitySection";
 import EducationSection from "@/views/Home/components/EducationSection";
 import ExperianceSection from "@/views/Home/components/ExperianceSection";
 import FaqSection from "@/views/Home/components/FaqSection";
@@ -12,7 +11,7 @@ const Home = () => {
       <HeroSection />
       <SkillsSection />
       <ExperianceSection />
-      <CommunitySection />
+      {/* <CommunitySection /> */}
       <EducationSection />
       <FaqSection />
       <GetInTouchSection />
