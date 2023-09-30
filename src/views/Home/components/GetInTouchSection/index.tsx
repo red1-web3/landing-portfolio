@@ -34,7 +34,15 @@ function Form() {
             type="email"
           />
         </div>
-        <Input label="Your Subject" placeholder="Jhon doe" type="text" />
+        <div className="flex max-md:flex-col items-center gap-5 w-full">
+          <Input label="Your Name" placeholder="Jhon doe" type="text" />
+          <Input
+            label="Your Email"
+            placeholder="example@gmail.com"
+            type="email"
+          />
+        </div>
+
         <div className="w-full">
           <label
             htmlFor="textArea"
@@ -72,24 +80,24 @@ function Information() {
       </p>
 
       <ul className="py-5 lg:py-10 space-y-5 text-white">
-        <li className="flex items-center gap-x-2">
+        {/* <li className="flex items-center gap-x-2">
           <span className="text-xl">
             <BsTelephoneFill />
           </span>
           <p className="font-medium">9982239118</p>
-        </li>
+        </li> */}
         <li className="flex items-center gap-x-2">
           <span className="text-xl">
             <IoMailSharp />
           </span>
-          <p className="font-medium">pssolanki111pss@gmail.com</p>
+          <p className="font-medium">pssolanki@pssolanki.com</p>
         </li>
-        <li className="flex items-center gap-x-2">
+        {/* <li className="flex items-center gap-x-2">
           <span className="text-xl">
             <FaLocationDot />
           </span>
           <p className="font-medium">India, New Delhi</p>
-        </li>
+        </li> */}
       </ul>
 
       <div className="w-[300px] h-[200px] rounded-full bg-gradient-to-r from-white/30 to-transparent absolute bottom-0 right-0 rotate-45 origin-center translate-y-1/3 translate-x-1/3"></div>

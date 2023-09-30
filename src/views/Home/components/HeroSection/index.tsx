@@ -31,7 +31,7 @@ const HeroSection = () => {
             <h4 className="text-xl lg:text-[32px]/[33px] ml-1.5 tracking-[0.18px] font-extrabold">
               Hi, I’m
             </h4>
-            <h1 className="text-4xl lg:text-[80px]/[103%] __gradient1 lg:mt-2 tracking-[0.18px] font-extrabold">
+            <h1 className="text-4xl lg:text-[70px]/[103%] __gradient1 lg:mt-2 tracking-[0.18px] font-extrabold">
               Pankaj Singh Solanki
             </h1>
 
